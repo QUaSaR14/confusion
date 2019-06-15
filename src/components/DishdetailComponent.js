@@ -3,6 +3,16 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 class DishDetail extends Component {
 
+    //demo of componentDidMount() --> lifecycle method
+    componentDidMount() {
+        console.log("Dish detail Component componentDidMount is invoked");
+    }
+
+    //demo of componentDidUpdate() --> lifecycle method
+    componentDidUpdate() {
+        console.log("Dish detail Component componentDidUpdate is invoked");
+    }
+
     renderComments(comments){
         if(comments){
             const commentList = comments.map( comment => {
@@ -56,14 +66,18 @@ class DishDetail extends Component {
     }
 
     render() {
+
+        //demo of render() --> lifecycle method
+        console.log("Dish detail Component render is invoked");
+
         const dishObj = this.props.dish;
         if(dishObj){
-            const dish = this.renderItem(dishObj);
-            const comments = this.renderComments(dishObj.comments);
             return (
-                <div className="row">
-                    {dish}
-                    {comments}
+                <div className="container">
+                    <div className="row">
+                        {this.renderItem(dishObj)}
+                        {this.renderComments(dishObj.comments)}
+                    </div>
                 </div>
             )
         }
