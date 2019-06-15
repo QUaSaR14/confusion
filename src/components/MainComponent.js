@@ -4,6 +4,9 @@ import Menu from './MenuComponent';
 import DishDetail from './DishdetailComponent';
 import { DISHES } from '../shared/dishes';
 
+//This MainComponent is a Container Component -->> which deal with the data 
+//It contains two Presentational Component --> Menu  and DishDetails
+
 class Main extends Component{
 
   constructor(props)
